@@ -1,1 +1,18 @@
-<p>home works!</p>
+<h1>Home</h1>
+ <hr>
+ 
+<div *ngIf="(auth.isAuthenticated$)">
+    <div *ngIf="auth.user$ | async as user">
+<p >
+Bienvenidx de nuevo!  {{user.name}}
+</p>
+</div>
+</div>
+
+<div *ngIf="!(auth.isAuthenticated$ | async)"> 
+<p >
+Por favor, inicia sesion en la parte superior derecha!
+</p>
+</div>
+
+

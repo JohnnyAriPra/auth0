@@ -22,7 +22,11 @@ import { AuthModule } from '@auth0/auth0-angular';
     BrowserModule,
     AppRoutingModule,
     AuthModule.forRoot({domain: 'dev-1hzhcejuuwhb0ny6.us.auth0.com',
-    clientId: 'zMPUTkHrQBcktfFOtCMXphIDo5440WFb'})
+    clientId: 'zMPUTkHrQBcktfFOtCMXphIDo5440WFb', 
+  authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
   ],
   providers: [
 

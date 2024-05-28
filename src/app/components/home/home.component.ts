@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor(public auth: AuthService){
+
+  }
 
 }

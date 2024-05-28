@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { AsyncPipe, DOCUMENT, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +8,12 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor(public auth: AuthService){
+  constructor(public auth: AuthService, @Inject(DOCUMENT) public document: Document){
 
+  }
+
+  login(){
+    this.auth.loginWithRedirect()
   }
 
 }
